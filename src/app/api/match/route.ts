@@ -18,7 +18,10 @@ export async function POST(req: NextRequest) {
     const input = surveySchema.parse(body) as SurveyInput;
     const results = matchNeighborhoods(input, neighborhoods);
     return NextResponse.json(results);
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 400 });
+  } catch (e: unknown) {
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : "Unknown error" },
+      { status: 400 }
+    );
   }
 }

@@ -24,8 +24,8 @@ export default function SurveyPage() {
       const data = await res.json();
       sessionStorage.setItem("neighborfit_results", JSON.stringify(data));
       router.push("/results");
-    } catch (e: any) {
-      setError(e.message || "Unknown error");
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Unknown error");
     } finally {
       setLoading(false);
     }
