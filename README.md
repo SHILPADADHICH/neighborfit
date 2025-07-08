@@ -1,3 +1,66 @@
+# NeighborFit
+
+NeighborFit is a full-stack web application that matches users to neighborhoods based on their lifestyle preferences using real-world data and algorithmic logic.
+
+## Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Prisma ORM (SQLite/Postgres)
+- Zod (validation)
+
+## Folder Structure
+
+- `src/app/` — App Router pages
+- `src/components/` — Reusable UI components
+- `src/lib/` — Server/client utilities
+- `src/types/` — TypeScript types
+- `src/utils/` — Pure utility functions
+- `src/api/` — API route handlers
+- `prisma/` — Prisma schema and migrations
+- `docs/` — Documentation
+
+## Setup
+
+1. Install dependencies: `npm install`
+2. Set up database: `npx prisma migrate dev --name init`
+3. Run dev server: `npm run dev`
+
+## Matching Logic
+
+See `src/utils/matchNeighborhoods.ts` for algorithm details.
+
+## Documentation
+
+See `docs/` for:
+
+- Problem definition
+- Research & assumptions
+- Matching algorithm
+- Data acquisition
+- Scalability
+
+## Deployment Checklist
+
+- [ ] Code is commented and documented
+- [ ] All environment variables are set (see .env.example)
+- [ ] Database is migrated and seeded with data
+- [ ] App runs locally with `npm run dev`
+- [ ] App is pushed to GitHub
+- [ ] App is deployed to Vercel
+- [ ] README is up to date
+
+## Sample Commit Message
+
+```
+feat: initial NeighborFit MVP with survey, results, and API endpoints
+```
+
+---
+
+_Work in progress. See issues for roadmap._
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
